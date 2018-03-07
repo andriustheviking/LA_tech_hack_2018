@@ -113,7 +113,7 @@ input[type=text]:focus {
 
 .dataOutput{
     font-size: 25px;
-    color: black;
+    color: white;
     position: relative;
     left: 10px;
 }
@@ -121,4 +121,14 @@ input[type=text]:focus {
 #individuals{
     background-color: black;
     color: rgb(255,252,255);
+}
+
+#decisionOutput{
+    color: black;
+    background-color: rgb(252,215,5);
+    font-weight: bold;
+}
+
+#individuals{
+    display: block;
 }
