@@ -3,8 +3,6 @@ Post Interview Data Point To Consider -
 	-Demonstrated knowledge of company?  Yes/No
 	-Total interview time
 	-Total questions asked
-	-Behavioral Questions asked
-	-Situational Questions asked
 	-Technical Question 1 Handled Successfully? Y/N
 	-Technical Question 2 Handled SuccessfullY? Y/N
 	-Personality rating:  (1 quiet    2 medium    3outgoing)
