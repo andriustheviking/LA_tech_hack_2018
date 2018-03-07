@@ -16,7 +16,7 @@ int main(void) {
 
 	outfile.open( "pre-interview-large.csv", fstream::out);
 
-	outfile << "userID,success,years_exp_total,number_of_employers,years_exp_relevant,degree_ba,degree_ms,degree_phd,internal_reference,external_web_indeed,external_web_glassdoor\n";
+	outfile << "userID,years_exp_total,number_of_employers,years_exp_relevant,degree_ba,degree_ms,degree_phd,internal_reference,external_web_indeed,external_web_glassdoor,success\n";
 
 
 	int userID,
@@ -66,7 +66,7 @@ int main(void) {
 	//	external_web_glassdoor;
 		external_web_glassdoor = !internal_reference && !external_web_indeed;	
 
-	outfile << userID << ", "<< success <<", "<< years_exp_total <<", "<< number_of_employers <<", "<< years_exp_relevant <<", "<< degree_ba <<", "<< degree_ms  <<", "<< degree_phd  <<", "<< internal_reference  <<", "<< external_web_indeed  <<", "<< external_web_glassdoor << "\n";
+	outfile << userID <<", "<< years_exp_total <<", "<< number_of_employers <<", "<< years_exp_relevant <<", "<< degree_ba <<", "<< degree_ms  <<", "<< degree_phd  <<", "<< internal_reference  <<", "<< external_web_indeed  <<", "<< external_web_glassdoor  << ", "<< success << "\n";
 
 	}
 
