@@ -14,7 +14,7 @@ int main(void) {
 
 	srand(time(NULL));
 
-	outfile.open( "pre-interview-large.csv", fstream::out);
+	outfile.open( "post-interview-large.csv", fstream::out);
 
 	outfile << "userID,success,did_research,interview_time,num_questions_asked,tech_Q_1,tech_Q_2,personality,salary_prev,salary_expect\n";
 
