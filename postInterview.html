@@ -6,7 +6,7 @@
 
     <body>
         <h2> Post Interview Data </h2>
-        <form action= "/script.py" method="get">
+        <form action= "/script.py" method="get" id="inteviewForm">
             Did the Applicant Demonstrate Knowledge of Company?
             <select name="Demonstrated Knowledge of Company?">
                 <option value="1"> Yes </option>
@@ -15,8 +15,8 @@
             Did Research
             <input type = "radio" name = "did_research" value = "1"> Yes </input>
             <input type = "radio" name = "did_research" value = "0"> No </input></br>
-            Interview Time: <input type="text" name= "interview_time_min"></input><br>
-            Number of Questions Asked: <input type= "text" name ="num_questions_asked"></input></br>
+            Interview Time (minutes): <input type="text" name="interview_time_min" id="interview_time_min"></input><br>
+            Number of Questions Asked: <input type= "text" id ="num_questions_asked"></input></br>
             Technical Question 1 Handled Successfully? 
             <input type ="radio" name = "tech_Q_1" value = "1"> Yes </input>
             <input type ="radio" name = "tech_Q_1" value = "0"> No </input><br>
@@ -24,14 +24,58 @@
             <input type ="radio" name = "tech_Q_2" value = "1"> Yes </input>
             <input type ="radio" name = "tech_Q_2" value = "0"> No </input><br>
             Rate the Applicants Personality 
-            <select name="personality">
+            <select name="personality" id="personality">
                 <option value="1"> Quiet </option>
                 <option value="2"> Average </option>
                 <option value="3"> Outgoing </option>
             </select><br>
-            Previous Salary <input type="text" name = "salary_prev"></input><br>
-            Expected Salary <input type="text" name = "salary_expect"></input><br> 
-            <input type="submit"></input>
+            Previous Salary <input type="text" name="salary_prev" id="salary_prev"></input><br>
+            Expected Salary <input type="text" name="salary_expect"  id="salary_expect"></input><br> 
+            <input type="submit" id="inteviewFormSubmit"></input>
         </form>
     </body>
+
+    <script type="text/javascript">
+        
+
+
+            var userData = {};
+
+            document.getElementById("inteviewForm").addEventListener("submit", function(){
+            
+                event.preventDefault()
+
+            //did_research,interview_time,num_questions_asked,tech_Q_1,tech_Q_2,personality,salary_prev,salary_expect,success
+                userData.did_research = getRadio(document.getElementsByName('did_research')).value;
+                userData.interview_time = document.getElementById('interview_time_min').value;
+                userData.num_questions_asked = document.getElementById('num_questions_asked').value;
+                userData.tech_Q_1 = getRadio(document.getElementsByName('tech_Q_1')).value;
+                userData.tech_Q_2 = getRadio(document.getElementsByName('tech_Q_2')).value;
+                userData.personality = document.getElementById('personality').value;
+                userData.salary_prev = document.getElementById('salary_prev').value;
+                userData.salary_expect = document.getElementById('salary_expect').value
+
+                console.log(userData);
+
+
+                var req = new XMLHttpRequest();
+
+                var localURL = "http://localhost:5002";
+
+                req.open("POST", localURL);
+                req.send( JSON.stringify(userData) );
+          
+            });
+
+            function getRadio(domArray) {
+                for (var i=0; i < domArray.length; i++) {
+
+                    if (domArray[i].value) {
+                        return domArray[i];
+                    }
+                }
+                return undefined;
+            }
+    </script>
+
 </html>
