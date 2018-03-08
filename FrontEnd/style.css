@@ -96,7 +96,8 @@ input[type=text]:focus {
 }
 
 .resultTitleBar2{
-    background-color:  green;
+    background-color:  brown;
+    color:white;
 }
 
 .dataPointSummary{
@@ -104,14 +105,27 @@ input[type=text]:focus {
 
 }
 
-.piechart{
+.chart{
    position: absolute;
-   top: 90px;
+   top: 180px;
    /* left: 100px; */
-   transform: scale(1.2);
+   transform: scale(1.7);
+
 }
+
 
 #shiftDown{
     position: relative;
     top: 1000px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#sumDescPre{
+    font-size: 45px;
+    font-weight: bold;
 }
