@@ -9,6 +9,16 @@ body{
 
 } 
 
+.dna_btn {
+    background-color: #c62127;
+    color: white;
+    border: #c62127;
+}
+
+.form-control {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 .navbar-brand{
     font-family: 'Great Vibes', cursive;
