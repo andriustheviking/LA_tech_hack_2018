@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function(event){
     dispWindow = "pre";
     initDisplay();
@@ -10,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function(event){
 function initDisplay(){
     document.getElementById("preInterview").style.display = "block";
     document.getElementById("postInterview").style.display = "none";
+
+    var outputArr = document.getElementsByClassName("dataOutput");
+
+    for (var i = 0 ; i < outputArr.length; i++){
+        outputArr[i].innerHTML = "";
+    }
 
 }
 
@@ -27,3 +36,7 @@ function showHideData(event){
         }
             
 }
+
+
+
+

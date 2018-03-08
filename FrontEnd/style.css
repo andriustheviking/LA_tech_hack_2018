@@ -80,3 +80,21 @@ input[type=text]:focus {
     background-color: rgb(252,215,5);
     font-weight: bold;
 }
+
+#individual{
+    display:block;
+}
+
+#summary{
+    background-color: black;
+    color: white;
+    display: block ;
+}
+
+.resultTitleBar{
+    background-color: brown;
+}
+
+.resultTitleBar2{
+    background-color:  green;
+}
