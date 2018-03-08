@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event){
     dispWindow = "pre";
+    dispWindowPost = "prePost";
     dispPage = "individual";
     initDisplay();
     initDescriptions();
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function(event){
 function initDisplay(){
     document.getElementById("preInterview").style.display = "block";
     document.getElementById("postInterview").style.display = "none";
+    document.getElementById("preInterviewSummary").style.display = "block";
+    document.getElementById("postInterviewSummary").style.display = "none";
 
     var outputArr = document.getElementsByClassName("dataOutput");
 
@@ -23,7 +26,7 @@ function initDisplay(){
 }
 
 function showHideData(event){
-        if (dispWindow === "pre"){
+        if (dispWindow === "pre" ){
             document.getElementById("preInterview").style.display = "none";
             document.getElementById("postInterview").style.display = "block";
             dispWindow = "post";
@@ -33,6 +36,18 @@ function showHideData(event){
             document.getElementById("preInterview").style.display = "block";
             document.getElementById("postInterview").style.display = "none";
             dispWindow = "pre";
+        }
+
+        else if (dispWindowPost === "prePost"){
+            document.getElementById("preInterviewSummary").style.display = "none";
+            document.getElementById("postInterviewSummary").style.display = "block";
+            dispPage = "postPost";
+        }
+    
+        else if (dispWindowPost === "postPost"){
+            document.getElementById("preInterviewSummary").style.display = "block";
+            document.getElementById("postInterviewSummary").style.display = "none";
+            dispPage = "postPost";
         }
             
 }
@@ -48,10 +63,11 @@ function showHidePages(event){
     }
 
     else if (dispPage === "summary"){
-        document.getElementById("summary").style.display = "block";
-        document.getElementById("individual").style.display = "none";
+        document.getElementById("individual").style.display = "block";
+        document.getElementById("summary").style.display = "none";
         dispPage = "individual";
     }
+
         
 }
 
