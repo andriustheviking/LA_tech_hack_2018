@@ -86,8 +86,8 @@ input[type=text]:focus {
 }
 
 #summary{
-    background-color: black;
-    color: white;
+    background-color: rgb(255,252,255);
+    color: black;
     display: block ;
 }
 
@@ -97,4 +97,15 @@ input[type=text]:focus {
 
 .resultTitleBar2{
     background-color:  green;
+}
+
+.dataPointSummary{
+    font-size: 25px;
+
+}
+
+#piechart{
+    position: absolute;
+    left: 100px;
+    transform: scale(2.0);
 }
