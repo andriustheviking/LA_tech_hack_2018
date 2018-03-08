@@ -1,7 +1,6 @@
 import sys   
 
 li=[]
-c_all=[]
 with open('output.txt','r') as f:
 
     counter=0
@@ -24,37 +23,55 @@ c3=-1
 c4=-1
 c5=-1
 c6=-1
-dic={}
+
+dict_list = []
+
 for kl in gi:
 
     if kl=='john':
 
         c1=gi.index(kl)
         d1={'kl':c1}
-        dic.update(d1)
+	dict_list.append(d1)
+
     elif kl=='address':
 
         c2=gi.index(kl)
         d2={'kl':c2}
-        dic.update(d2)
+	dict_list.append(d2)
+        
 
     elif kl=='education':
         c3=gi.index(kl)
-        d3={'k1':c3}
-        dic.update(d3)
+        d3={'kl':c3}
+	dict_list.append(d3)
     elif kl=='experience':
         c4=gi.index(kl)
-        d4={'k1':c4}
-        dic.update(d4)
+        d4={'kl':c4}
+	dict_list.append(d4)
 
     elif kl=='certifications':
-        c5=gi.index(kl)
+	c5=gi.index(kl)
         d5={'kl':c5}
+	dict_list.append(d5)
     elif kl=='interest':
-        c6=gi.index(kl)
-print dic        
+        
+	c6=gi.index(kl)
+        d6={'kl':c6}
+	dict_list.append(d6)
+
+new_dict = {}
+print dict_list
+for x in dict_list:
+    for (key, value) in x:
+        new_dict[key] = value
+	print key, value
+
+print new_dict
+
+c_all=[]
 if c1>0:
-    c_all.append(d1)
+    c_all.append(c1)
 if c2>0:
     c_all.append(c2)
 if c3>0:
