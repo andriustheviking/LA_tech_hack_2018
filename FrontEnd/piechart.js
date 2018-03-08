@@ -26,14 +26,14 @@ function drawChart() {
   
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Did Research', 'width':600, 'height':600};
+  var options = {'title':'', 'width':500, 'height':500};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
   chart.draw(data, options);
 
     // Optional; add a title and set the width and height of the chart
-    var options = {'title':'Title2', 'width':600, 'height':600};
-  var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-  chart.draw(data2, options);
+//     var options = {'title':'', 'width':600, 'height':600};
+//   var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+//   chart.draw(data2, options);
 }
