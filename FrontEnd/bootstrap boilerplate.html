@@ -12,6 +12,7 @@
 
     <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -30,26 +31,25 @@
     <!-- Page Display Mode -->
     <div>
         <span id="displayTitle1">Page Display Mode: </span> 
-        <span class="displayTitle2">Pre-Interview</span>
+        <!-- <span class="displayTitle2">Pre-Interview</span> -->
 
         <!-- Rounded switch -->
     
         <span>
-            <!-- Rounded switch -->
-            <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-            </label>
+            <!-- Toggle Button -->
+            <button type="button" class="btn btn-primary" id="buttonPrev" onclick="showHideData()" >Toggle View</button>
         </span>
 
-        <span class="displayTitle2">Post-Interview</span>
+        <!-- <span class="displayTitle2">Post-Interview</span> -->
 
     </div>
-    
-    <hr>
-    <!-- begin the div element of individuals -->
-    <div id="individuals">
+ <!-- *******************************************************************************************************
+ Begin Data Display Section For Pre Interview Category
+ ******************************************************************************************************* -->
+     <!-- begin the div element of individuals -->
+    <div id="preInterview">
             <br>
+            <h1>Pre-Interview Data</h1>
 
             <p id="searchTitle">Search For Individual Applicant</p>
             <span>
@@ -74,6 +74,13 @@
     <hr>
     <h1>Results:</h1>
         
+        <!-- Applicant Name Information -->
+        <div class>
+            <span class = "dataPoint">Name:</span>
+            <span id ="nameOutput" class = "dataOutput"> Joe Smith</span>
+        </div>
+    
+    
         <!-- Applicant ID Information -->
         <div class>
             <span class = "dataPoint">Applicant ID:</span>
@@ -128,9 +135,127 @@
         </div>
         
 
-   <!-- end the div individual id data display section -->
-   </div> 
-    
+   <!-- end the div preinterview id data display section -->
+    </div>
+
+
+   <!-- ************************************************************************************************
+   Start Page Display Section For Post-Interview Results
+   ************************************************************************************************ -->
+     <!-- begin the div element of post interview -->
+     <div id="postInterview">
+            <br>
+            <h1>Post-Interview Data</h1>
+
+            <p id="searchTitle">Search For Individual Applicant</p>
+            <span>
+                <!-- Search Bar Below: -->
+                <form>
+                    <input type="text" name="search" placeholder="Search..">
+                </form>
+                           <!-- submit button -->
+                <button type="button" class="btn btn-primary">Search Now</button>
+            </span>
+        <br>
+
+
+    <hr>
+    <h1>Decision:</h1>
+
+        <!-- Applicant ID Information -->
+        <div class>
+            <span id ="decisionOutputPost" class = "dataOutput"> HIRED</span>
+        </div>
+
+    <hr>
+    <h1>Results:</h1>
+
+        <!-- Applicant ID Information -->
+        <div class>
+            <span class = "dataPoint">Name:</span>
+            <span id ="nameOutputPost" class = "dataOutput"> Joe Smith</span>
+        </div>
+        
+        <!-- Research Conducted -->
+        <div class>
+            <span class = "dataPoint">Researched Company:</span>
+            <span id ="researchOutput" class = "dataOutput"> Yes</span>
+        </div>
+
+         <!-- Total Interview Time -->
+         <div class>
+                <span class = "dataPoint">Interview Time (minutes):</span>
+                <span id ="intTimeOutput" class = "dataOutput"> 60</span>
+        </div>     
+        
+        <!-- Was technical question 1 answered satisfactorily? -->
+        <div class>
+            <span class = "dataPoint">Technical Question 1:</span>
+            <span id ="tech1Output" class = "dataOutput"> Yes</span>
+        </div>
+
+        <!-- Was technical question 2 answered satisfactorily? -->
+        <div class>
+            <span class = "dataPoint">Technical Question 2:</span>
+            <span id ="tech1Output" class = "dataOutput"> No</span>
+        </div>
+
+
+        <!-- Personality Rating 1 through 3 from introverted, medium/easy going, overaly extreverted -->
+        <div class>
+                <span class = "dataPoint">Personality:</span>
+                <span id ="personalityOutput" class = "dataOutput"> 2</span>
+        </div>
+
+
+        <!-- Previous Salary (if reported) -->
+        <div class>
+                <span class = "dataPoint">Previous Salary:</span>
+                <span id ="prevSalOutput" class = "dataOutput"> 100000</span>
+        </div>
+
+
+        <!-- Expected Salary (if reported) -->
+        <div class>
+                <span class = "dataPoint">Expected Salary:</span>
+                <span id ="prevSalOutput" class = "dataOutput"> 200000</span>
+        </div>
+
+
+
+
+
+
+
+        <!-- Undergrad Degree -->
+        <div class>
+            <span class = "dataPoint">Bachelor Degrees:</span>
+            <span id ="bachelorOutput" class = "dataOutput"> 1</span>
+        </div>
+
+
+        <!-- Masters Degrees -->
+        <div class>
+            <span class = "dataPoint">Masters Degrees:</span>
+            <span id ="masterOutput" class = "dataOutput"> 1</span>
+        </div>
+
+
+        <!---Doctorate Degrees -->
+        <div class>
+            <span class = "dataPoint">Doctorate Degrees:</span>
+            <span id ="doctorateOutput" class = "dataOutput"> 1</span>
+        </div>
+
+         <!---Source Degrees -->
+        <div class>
+            <span class = "dataPoint">Doctorate Degrees:</span>
+            <span id ="sourceOutput" class = "dataOutput"> Glassdoor</span>
+        </div>
+        
+
+   <!-- end the div individual postInterview display section -->
+    </div>
 
     
     
@@ -149,6 +274,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- The below js file is to implement button click events, and show/hide appropriate blocks etc. -->
+        <script src="individual.js"></script>
+
+
 
 </body>
 </html>
