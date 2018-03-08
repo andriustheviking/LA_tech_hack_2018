@@ -15,8 +15,13 @@
     <div class="row dna-banner">
         <img  style="margin:auto;margin-top: 50px;" src="employeeDNA_logo_small.png">
     </div>
+
+<!---   INSERT TOGGLE HERE ---->
+    <div class="row center"> <button type="button" class="btn btn-primary" id="buttonPrev" onclick="showHideData()" >Toggle View</button></div>
+
+    <div id="preInterview">
     <div class="row center-text" style="margin: 25px auto;">
-        <h2 class="center"> Results</h2>
+        <h2 class="center"> Pre Inteview Data</h2>
     </div>
     <div class="row" style="display:inline-block; width:50%; margin-left:25%">
         <!-- Applicant Name Information -->
@@ -28,25 +33,25 @@
         <!-- Applicant ID Information -->
         <div class="result">
             <span class = "dataPoint">Applicant ID:</span>
-            <span id ="applicantIdOutput" class = "dataOutput"> 1</span>
+            <span id ="applicantIdOutput" class = "dataOutput"> 745</span>
         </div>
         <br>
         <!-- Years Experience -->
         <div class="result">
                 <span class = "dataPoint">Years Experience:</span>
-                <span id ="yearsOutput" class = "dataOutput"> 10</span>
+                <span id ="yearsOutput" class = "dataOutput"> 5</span>
         </div>
         <br>
         <!-- Number of Employers -->
         <div class="result">
             <span class = "dataPoint">Number of Employers:</span>
-            <span id ="yearsOutput" class = "dataOutput"> 10</span>
+            <span id ="yearsOutput" class = "dataOutput"> 2</span>
         </div>
         <br>
         <!-- Years of Relevant Experience -->
         <div class="result">
             <span class = "dataPoint">Years Rel Experience:</span>
-            <span id ="yearsOutput" class = "dataOutput"> 10</span>
+            <span id ="yearsOutput" class = "dataOutput"> 3</span>
         </div>
         <br>
         <!-- Undergrad Degree -->
@@ -64,7 +69,7 @@
         <!---Doctorate Degrees -->
         <div class="result">
             <span class = "dataPoint">Doctorate Degrees:</span>
-            <span id ="doctorateOutput" class = "dataOutput"> 1</span>
+            <span id ="doctorateOutput" class = "dataOutput"> 0</span>
         </div>
         <br>
          <!---Referall Source -->
@@ -74,6 +79,81 @@
         </div>
         <br>
    <!-- end the div preinterview id data display section -->
+    </div>
+    <div>
+
+
+    <div id="postInterview">
+        <div class="row center-text" style="margin: 25px auto;">
+            <h2 class="center"> Pre Inteview Data</h2>
+        </div>
+
+
+    <hr>
+    <h1>Decision:</h1>
+
+        <!-- Applicant ID Information -->
+        <div class="result">
+            <span id ="decisionOutputPost" class = "dataOutput"> HIRED</span>
+        </div>
+
+    <hr>
+    <h1>Results:</h1>
+
+        <!-- Applicant ID Information -->
+        <div class="result">
+            <span class = "dataPoint">Name:</span>
+            <span id ="nameOutputPost" class = "dataOutput"> Joe Smith</span>
+        </div>
+        
+        <!-- Research Conducted -->
+        <div class="result">
+            <span class = "dataPoint">Researched Company:</span>
+            <span id ="researchOutput" class = "dataOutput"> Yes</span>
+        </div>
+
+         <!-- Total Interview Time -->
+         <div class="result">
+                <span class = "dataPoint">Interview Time (minutes):</span>
+                <span id ="intTimeOutput" class = "dataOutput"> 60</span>
+        </div>     
+        
+        <!-- Was technical question 1 answered satisfactorily? -->
+        <div class="result">
+            <span class = "dataPoint">Technical Question 1:</span>
+            <span id ="tech1Output" class = "dataOutput"> Yes</span>
+        </div>
+
+        <!-- Was technical question 2 answered satisfactorily? -->
+        <div class="result">
+            <span class = "dataPoint">Technical Question 2:</span>
+            <span id ="tech1Output" class = "dataOutput"> No</span>
+        </div>
+
+
+        <!-- Personality Rating 1 through 3 from introverted, medium/easy going, overaly extreverted -->
+        <div class="result">
+                <span class = "dataPoint">Personality:</span>
+                <span id ="personalityOutput" class = "dataOutput"> 2</span>
+        </div>
+
+
+        <!-- Previous Salary (if reported) -->
+        <div class="result">
+                <span class = "dataPoint">Previous Salary:</span>
+                <span id ="prevSalOutput" class = "dataOutput"> 100000</span>
+        </div>
+
+
+        <!-- Expected Salary (if reported) -->
+        <div class="result">
+                <span class = "dataPoint">Expected Salary:</span>
+                <span id ="prevSalOutput" class = "dataOutput"> 200000</span>
+        </div>
+
+       
+
+   <!-- end the div individual postInterview display section -->
     </div>
 
 
