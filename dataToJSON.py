@@ -4,6 +4,15 @@ import signal
 import os.path
 import json
 import pandas as pd
+from colorama import init, Fore, Back, Style
+init()
+
+def cprint(msg, foreground = "black", background = "white"):
+    fground = foreground.upper()
+    bground = background.upper()
+    style = getattr(Fore, fground) + getattr(Back, bground)
+    print(style + msg + Style.RESET_ALL)
+
 df = pd.read_csv('post-interview-large.csv')
 df = df.drop('userID', axis=1)
 from sklearn.model_selection import train_test_split
@@ -17,15 +26,14 @@ regression_model.coef_
 
 host = ''
 
-filename = "postInterviewData"
+filename = "postInterviewData.txt"
 
 fp = open(filename, "w+")
 
-serverPort = int(sys.argv[1])
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-serverSocket.bind((host,serverPort))
+serverSocket.bind((host,8001))
 
 serverSocket.listen(1)
 
@@ -40,7 +48,7 @@ while True:
     received_msg = received_msg.decode()
     beg = received_msg.find("{")
     end = received_msg.find("}") + 1
-    fp.write(received_msg[beg:end] + "\n")
+    fp.write(received_msg[beg:end])
     connectionSocket.send(ackMsg.encode())
     fp.close()
     break
@@ -54,4 +62,4 @@ aa=[int(x) for x in li]
 a = regression_model.predict(aa)
 b = a[0]*100
 
-print (b)
+cprint (str(b), "green", "black")
