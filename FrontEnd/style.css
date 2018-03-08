@@ -4,10 +4,7 @@ Description: Assignment # 1 CS 290 - HTML FILE*/
 
 body{
 
-
-
 } 
-
 
 
 .inputdiv{
@@ -66,17 +63,16 @@ input[type=text]:focus {
     width: 25%;
 }
 
+.result {
+    display: inline;
+}
+
 .dataPoint{
-    font-size: 25px;
-    color: rgb(252, 215, 5);
-    background-color: black;
+   color: #c62127;
 }
 
 .dataOutput{
-    font-size: 25px;
-    color: white;
-    position: relative;
-    left: 10px;
+    float: right;
 }
 
 
