@@ -104,8 +104,14 @@ input[type=text]:focus {
 
 }
 
-#piechart{
-    position: absolute;
-    left: 100px;
-    transform: scale(2.0);
+.piechart{
+   position: absolute;
+   top: 90px;
+   /* left: 100px; */
+   transform: scale(1.2);
+}
+
+#shiftDown{
+    position: relative;
+    top: 1000px;
 }
