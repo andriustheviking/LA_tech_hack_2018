@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h2> Post Interview Data </h2>
+        <form method="post" id="inteviewForm">
+            <!--
+            Did the Applicant Demonstrate Knowledge of Company?
+            <select name="Company" id= "Company">
+                <option value="1"> Yes </option>
+                <option value="0"> No </option>
+            </select><br>
+        -->
+            Did Research
+            <input type = "radio" name = "did_research" value = "1"> Yes </input>
+            <input type = "radio" name = "did_research" value = "0"> No </input></br>
+            Interview Time (minutes): <input type="text" name="interview_time_min" id="interview_time_min"></input><br>
+            Number of Questions Asked: <input type= "text" id ="num_questions_asked"></input></br>
+            Technical Question 1 Handled Successfully? 
+            <input type ="radio" name = "tech_Q_1" value = "1"> Yes </input>
+            <input type ="radio" name = "tech_Q_1" value = "0"> No </input><br>
+            Technical Question 2 Handled Successfully? 
+            <input type ="radio" name = "tech_Q_2" value = "1"> Yes </input>
+            <input type ="radio" name = "tech_Q_2" value = "0"> No </input><br>
+            Rate the Applicants Personality 
+            <select name="personality" id="personality">
+                <option value="1"> Quiet </option>
+                <option value="2"> Average </option>
+                <option value="3"> Outgoing </option>
+            </select><br>
+            Previous Salary <input type="text" name="salary_prev" id="salary_prev"></input><br>
+            Expected Salary <input type="text" name="salary_expect"  id="salary_expect"></input><br> 
+            <!--
+            Success?
+            <input type="radio" name= "success" value = "1"> Yes </input>
+            <input type="radio" name = "success" value = "0"> No </input><br>
+            -->
+            <input type="submit" id="inteviewFormSubmit"></input>
+        
+        <!--
+            Total Years of Work Experience:
+            <input type="text" name = "total_exp" id = "total_exp"></input><br>
+            Number of Past Employers:
+            <input type="text" name = "past_employers" id= "past_employers"></input><br>
+            Years of Relevent Work Experience:
+            <input type="text" name = "relevent_exp" id = "relevent_exp"></input><br>
+            Bachelor's Degree?
+            <input type ="radio" name = "BDegree" value = "1"> Yes </input>
+            <input type ="radio" name = "BDegree" value = "0"> No </input><br>
+            Master's Degree?
+            <input type ="radio" name = "MDegree" value = "1"> Yes </input>
+            <input type ="radio" name = "MDegree" value = "0"> No </input><br>
+            Doctorate's?
+            <input type ="radio" name = "PDegree" value = "1"> Yes </input>
+            <input type ="radio" name = "PDegree" value = "0"> No </input><br>
+            Internal Reference?
+            <input type ="radio" name = "iReference" value = "1"> Yes </input>
+            <input type ="radio" name = "iReference" value = "0"> No </input><br>
+            Indeed?
+            <input type ="radio" name = "Indeed" value = "1"> Yes </input>
+            <input type ="radio" name = "Indeed" value = "0"> No </input><br>
+            Glassdoor?
+            <input type ="radio" name = "Glassdoor" value = "1"> Yes </input>
+            <input type ="radio" name = "Glassdoor" value = "0"> No </input><br>
+            <input type="submit" id="inteviewFormSubmit"></input>
+        -->
+        </form>
+    </body>
+    <script type="text/javascript">
+        
+
+
+            var userData = {};
+
+            document.getElementById("inteviewForm").addEventListener("submit", function(event){
+            
+                event.preventDefault()
+
+                //did_research,interview_time,num_questions_asked,tech_Q_1,tech_Q_2,personality,salary_prev,salary_expect,success
+                //userData.knowledge = document.getElementById('Company').value;
+                userData.did_research = getRadio(document.getElementsByName('did_research')).value;
+                userData.interview_time = document.getElementById('interview_time_min').value;
+                userData.num_questions_asked = document.getElementById('num_questions_asked').value;
+                userData.tech_Q_1 = getRadio(document.getElementsByName('tech_Q_1')).value;
+                userData.tech_Q_2 = getRadio(document.getElementsByName('tech_Q_2')).value;
+                userData.personality = document.getElementById('personality').value;
+                userData.salary_prev = document.getElementById('salary_prev').value;
+                userData.salary_expect = document.getElementById('salary_expect').value
+                //userData.success = getRadio(document.getElementsByName('success')).value;
+
+                //userData.total_exp = document.getElementById('total_exp').value;
+                //userData.past_exployers = document.getElementById('past_employers').value;
+                //userData.relevent_exp = document.getElementById('relevent_exp').value;
+               // userData.BDegree = getRadio(document.getElementsByName('BDegree')).value;
+               // userData.MDegree = getRadio(document.getElementsByName('MDegree')).value;
+               // userData.PDegree = getRadio(document.getElementsByName('PDegree')).value;
+               // userData.iReference = getRadio(document.getElementsByName('iReference')).value;
+               // userData.Indeed = getRadio(document.getElementsByName('Indeed')).value;
+               // userData.Glassdoor = getRadio(document.getElementsByName('Glassdoor')).value;
+                //userData.Success = getRadio(document.getElementsByName('Success')).value;
+
+                console.log(userData);
+
+
+                var req = new XMLHttpRequest();
+
+                var localURL = "http://localhost:8001";
+                req.open("POST", localURL);
+                req.send(JSON.stringify(userData));
+          
+            });
+
+            function getRadio(domArray) {
+                for (var i=0; i < domArray.length; i++) {
+
+                    if (domArray[i].value) {
+                        return domArray[i];
+                    }
+                }
+                return undefined;
+            }
+    </script>
+
+</html>

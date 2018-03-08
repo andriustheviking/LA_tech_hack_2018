@@ -1,39 +1,91 @@
 <!DOCTYPE HTML>
-
+<html>
     <head>
         <meta charset="UTF-8">
+            <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+
+        <!-- Google Fonts Link -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     </head>
 
-    <body>
-        <h2> Post Interview Data </h2>
-        <form action= "/script.py" method="get" id="inteviewForm">
-            Did the Applicant Demonstrate Knowledge of Company?
-            <select name="Demonstrated Knowledge of Company?">
-                <option value="1"> Yes </option>
-                <option value="0"> No </option>
-            </select><br>
-            Did Research
-            <input type = "radio" name = "did_research" value = "1"> Yes </input>
-            <input type = "radio" name = "did_research" value = "0"> No </input></br>
-            Interview Time (minutes): <input type="text" name="interview_time_min" id="interview_time_min"></input><br>
-            Number of Questions Asked: <input type= "text" id ="num_questions_asked"></input></br>
-            Technical Question 1 Handled Successfully? 
-            <input type ="radio" name = "tech_Q_1" value = "1"> Yes </input>
-            <input type ="radio" name = "tech_Q_1" value = "0"> No </input><br>
-            Technical Question 2 Handled Successfully? 
-            <input type ="radio" name = "tech_Q_2" value = "1"> Yes </input>
-            <input type ="radio" name = "tech_Q_2" value = "0"> No </input><br>
-            Rate the Applicants Personality 
-            <select name="personality" id="personality">
-                <option value="1"> Quiet </option>
-                <option value="2"> Average </option>
-                <option value="3"> Outgoing </option>
-            </select><br>
-            Previous Salary <input type="text" name="salary_prev" id="salary_prev"></input><br>
-            Expected Salary <input type="text" name="salary_expect"  id="salary_expect"></input><br> 
-            <input type="submit" id="inteviewFormSubmit"></input>
-        </form>
-    </body>
+    <body><div class="container-fluid ">
+        <div class="row dna-banner">
+            <img  style="margin:auto;margin-top: 50px;" src="employeeDNA_logo_small.png">
+        </div>
+
+        <div class="row center-text" style="margin: 25px auto;">
+            <h2 class="center"> Post Interview Data </h2>
+        </div>
+        <div class="row"> 
+        <div class="col-xs-10 col-xs-offset-1 center">
+            <form action= "/script.py" method="get" id="inteviewForm">
+                <div class="inputdiv">
+                    Did the Applicant Demonstrate Knowledge of Company?
+                    <select name="Demonstrated Knowledge of Company?" class="custom-select" style="width:auto;height:35px">
+                        <div style="float:right">
+                        <option value="1"> Yes </option>
+                        <option value="0"> No </option>
+                        </div>
+                    </select>
+                </div>
+
+                <div class="inputdiv">
+                    Did Research
+                    <div style="float:right">
+                        <input type = "radio" name = "did_research" value = "1"> Yes </input>
+                        <input type = "radio" name = "did_research" value = "0"> No </input>
+                    </div>
+                </div>
+
+                <div class="inputdiv">
+                    Interview Time (minutes): <input type="text" name="interview_time_min" id="interview_time_min" style="float:right"></input>
+                </div>
+
+                <div class="inputdiv">
+                    Number of Questions Asked: <input type= "text" id ="num_questions_asked" style="float:right"></input></br>
+                </div>
+                <div class="inputdiv"> 
+                    Technical Question 1 Handled Successfully? 
+                    <div style="float:right">
+                        <input type ="radio" name = "tech_Q_1" value = "1"> Yes </input>
+                        <input type ="radio" name = "tech_Q_1" value = "0"> No </input>
+                    </div>
+                </div>
+
+                <div class="inputdiv">                
+                    Technical Question 2 Handled Successfully? 
+                    <div  style="float:right">
+                    <input type ="radio" name = "tech_Q_2" value = "1"> Yes </input>
+                    <input type ="radio" name = "tech_Q_2" value = "0"> No </input>
+                    </div>
+                </div>
+
+                <div class="inputdiv"> 
+                Rate the Applicants Personality 
+                    <select name="personality" id="personality"  style="float:right;width:auto;height:35px" class="custom-select">
+                        <option value="1"> Quiet </option>
+                        <option value="2"> Average </option>
+                        <option value="3"> Outgoing </option>
+                    </select>
+                </div>
+                <div class="inputdiv">
+                Previous Salary <input type="text" name="salary_prev" id="salary_prev" style="float:right"></input>
+                </div>
+                <div class="inputdiv">
+                Expected Salary <input type="text" name="salary_expect"  id="salary_expect" style="float:right"></input>
+                </div>
+                <br>
+                <input type="submit" id="inteviewFormSubmit" class="btn dna_btn" style="float:right"></input>
+            </form>
+
+        </div>
+
+        </div>
+        <div class="row" style="height:50px"></div>
+    </div></body>
 
     <script type="text/javascript">
         
@@ -77,5 +129,7 @@
                 return undefined;
             }
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
